@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="css/Seminarski.css">
+    <meta charset="utf-8">
+    <title>Seminarski</title>
+
+  </head>
+  <body background="Slike/siva.jpg" style="     background-attachment: fixed; background-repeat: no-repeat;">
+        <div class="futer">
+           <a href="Seminarski/Seminarski.docx"> <img class="Word" src= "Slike/Word.png"></a>
+                <a href="Index.html">Početna</a>
+                  <a href="Omeni.html">O Meni</a>
+                  <a href="Galerija.html">Galerija</a>
+                  <a href="Medija.html">Medija</a>
+                  <a href="Seminarski.html">Seminarski</a>
+                  <a href="Kontakt.html">Kontakt</a>
+             
+                <a href="Seminarski/Prezentacija.pptx"> <img class="ptt" src= "Slike/ptt.png"></a>
+                </div>
+<div id="Opis"><p>Na sledećem primeru prezentovaću Vam neke od karakteristika Google Maps. Ostale karakteristike možete videte klikom na Word ikonicu.</p></div>
+    <div id="map"></div>
+    <div class="Header"><p>Copyrights 2019 | Aleksandar Đurić</p></div>
+    <script>
+
+      var marker;
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 44.227856, lng: 20.977500}
+        });
+        44.227856, 20.977500
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat: 44.227856, lng: 20.977500}
+        });
+        marker.addListener('click', toggleBounce);
+      }
+
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbZ9lbb1q1wd7QmAv54Dm0ZIz56D724hE&callback=initMap">
+    </script>
+  </body>
+</html>
